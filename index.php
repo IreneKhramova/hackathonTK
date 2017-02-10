@@ -6,7 +6,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <title>Onassis - Bootstrap 3 Theme</title>
+    <title>Кафе Саранск</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -36,7 +36,7 @@
 	<!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">Onassis</a></h1>
+			<h1 class="logo"><a href="index.html#home">Кафе Саранск</a></h1>
 			<i class="icon-remove menu-close"></i>
 			<a href="#home" class="smoothScroll">Home</a>
 			<a href="#services" class="smoothScroll">Services</a>
@@ -66,7 +66,7 @@
 				<br>
 				<br>
 				<br>
-				<div class="col-lg-6 col-lg-offset-3">
+				<div class="col-sm-6 col-md-6 col-lg-6  col-sm-offset-3  col-md-offset-3 col-lg-offset-3">
 				</div>
 			</div>
 		</div><!-- /container -->
@@ -77,7 +77,7 @@
 	<div id="w">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2">
+				<div class="col-sm-8 col-md-offset-2 col-lg-8 col-sm-offset-2 col-md-8 col-sm-offset-2">
 				<h3>WELCOME TO <bold>ONASSIS</bold>. <bold>A FREE BOOTSTRAP 3</bold> THEME. CRAFTED WITH LOVE BY <bold>BLACKTIE.CO</bold>. <br/>
 					<bold>IDEAL FOR</bold> AGENCIES & FREELANCERS.
 				</h3>
@@ -87,6 +87,7 @@
 	</div><!-- /w -->
 
 
+	<!-- ========== SERVICES - GREY SECTION ========== -->
 	<?php
   			$mysqli = @new mysqli('localhost', 'root', 'root', 'cafe');
   			if (mysqli_connect_errno()) {
@@ -96,8 +97,6 @@
 	?>
 
 
-
-	<!-- ========== SERVICES - GREY SECTION ========== -->
 	<section id="services" name="services"></section>
 	<div id="g">
 		<div class="container">
@@ -105,86 +104,23 @@
 				<h3>Кафе</h3>
 				<br>
 				<br>
-				<div class="col-lg-3">
 
 
-					<?php
-					$result_set = $mysqli->query('Select image from cafe where id=1');
-					while ($row = $result_set->fetch_assoc()) {
-    					echo "<img src=\"" . $row['image'] . "\">";
-					}
-					$result_set->close();
-					?>
+				<?php 
+				$result=$mysqli->query('SELECT * FROM `cafe`'); // запрос на выборку
+				while($row= $result->fetch_assoc())
+				{
+				echo '  <div class="col-sm-3 col-md-3 col-lg-3">
+					<img src="' . $row['image'] . '">
+					<h4>'.$row['name'].'</h4>
+					<p>'.$row['address'].'</p>
+					<p>'.$row['rating'].'</p>
+					</div>';
+				}
+				$result->close();
+				?>
 
-
-					
-					<h4>
-
-
-
-					<?php
-					$result_set = $mysqli->query('Select name from cafe where id=1');
-					while ($row = $result_set->fetch_assoc()) {
-    					echo $row['name'];
-					}
-					$result_set->close();
-					?>
-
-
-
-					</h4>
-					<p>
-						
-					<?php
-					$result_set = $mysqli->query('Select address from cafe where id=1');
-					while ($row = $result_set->fetch_assoc()) {
-    					echo $row['address'];
-					}
-					$result_set->close();
-					?>
-
-
-
-
-					</p>
-				</div>
-				<div class="col-lg-3">
-					<img src="assets/img/s2.png">
-					<h4>Berlin</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-				</div>
-				<div class="col-lg-3">
-					<img src="assets/img/s3.png">
-					<h4>Paris</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-				</div>
-				<div class="col-lg-3">
-					<img src="assets/img/s4.png">
-					<h4>Tokyo</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-				</div>
-				<br>
-				<br>
-				<div class="col-lg-3">
-					<img src="assets/img/s1.png">
-					<h4>London</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-				</div>
-				<div class="col-lg-3">
-					<img src="assets/img/s2.png">
-					<h4>Berlin</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-				</div>
-				<div class="col-lg-3">
-					<img src="assets/img/s3.png">
-					<h4>Paris</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-				</div>
-				<div class="col-lg-3">
-					<img src="assets/img/s4.png">
-					<h4>Tokyo</h4>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever.</p>
-				</div>
+	
 			</div>
 		</div><!-- /container -->
 	</div><!-- /g -->
@@ -204,19 +140,19 @@
 			<div class="row">
 					<h3><b>CONTACT US</b></h3>
 					<br>
-					<div class="col-lg-4">
+					<div class="col-sm-4 col-md-4 col-lg-4">
 						<h3><b>Send Us A Message:</b></h3>
 						<h3>onassis@blacktie.co</h3>
 						<br>
 					</div>
 					
-					<div class="col-lg-4">	
+					<div class="col-sm-4 col-md-4 col-lg-4">	
 						<h3><b>Call Us:</b></h3>
 						<h3>+55 3984-4389</h3>
 						<br>
 					</div>
 					
-					<div class="col-lg-4">
+					<div class="col-sm-4 col-md-4 col-lg-4">
 						<h3><b>We Are Social</b></h3>
 						<p>
 							<a href="index.html#"><i class="icon-facebook"></i></a>
