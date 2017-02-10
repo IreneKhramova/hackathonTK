@@ -19,7 +19,6 @@
 	<script src="assets/js/Chart.js"></script>
 	<script src="assets/js/modernizr.custom.js"></script>
 	
-
 	
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,700' rel='stylesheet' type='text/css'>
@@ -54,40 +53,9 @@
 	</nav>
 
 
-	
-	<!-- ========== HEADER SECTION ========== -->
-	<section id="home" name="home"></section>
-	<div id="headerwrap">
-		<div class="container">
-			<br>
-			<h1>Кафе</h1>
-			<h2>Саранск</h2>
-			<div class="row">
-				<br>
-				<br>
-				<br>
-				<div class="col-sm-6 col-md-6 col-lg-6  col-sm-offset-3  col-md-offset-3 col-lg-offset-3">
-				</div>
-			</div>
-		</div><!-- /container -->
-	</div><!-- /headerwrap -->
-	
-	
-	<!-- ========== WHITE SECTION ========== -->
-	<div id="w">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-8 col-md-offset-2 col-lg-8 col-sm-offset-2 col-md-8 col-sm-offset-2">
-				<h3>WELCOME TO <bold>ONASSIS</bold>. <bold>A FREE BOOTSTRAP 3</bold> THEME. CRAFTED WITH LOVE BY <bold>BLACKTIE.CO</bold>. <br/>
-					<bold>IDEAL FOR</bold> AGENCIES & FREELANCERS.
-				</h3>
-				</div>
-			</div>
-		</div><!-- /container -->
-	</div><!-- /w -->
-
 
 	<!-- ========== SERVICES - GREY SECTION ========== -->
+
 	<?php
   			$mysqli = @new mysqli('localhost', 'root', 'root', 'cafe');
   			if (mysqli_connect_errno()) {
@@ -100,28 +68,27 @@
 	<section id="services" name="services"></section>
 	<div id="g">
 		<div class="container">
-			<div class="row">
-				<h3>Кафе</h3>
-				<br>
-				<br>
-
 
 				<?php 
-				$result=$mysqli->query('SELECT * FROM `cafe`'); // запрос на выборку
-				while($row= $result->fetch_assoc())
+				if (isset($_GET['id']))
 				{
-				echo '  <div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="' . $row['image'] . '">
-					<h4><a href="item.php?id='. $row['id'] .'">'.$row['name'].'</a></h4>
+					
+					$result=$mysqli->query('SELECT * FROM `cafe` where id="' . $_GET['id'] . '"'); 
+					while($row= $result->fetch_assoc())
+					{
+					echo ' <img src="' . $row['image'] . '">
+					<h4>'.$row['name'].'</h4>
 					<p>'.$row['address'].'</p>
 					<p>'.$row['rating'].'</p>
-					</div>';
+					';
+					}
+					$result->close();
 				}
-				$result->close();
+				else 
+					echo '404';
 				?>
 
 	
-			</div>
 		</div><!-- /container -->
 	</div><!-- /g -->
 	
