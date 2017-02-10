@@ -114,37 +114,6 @@ a:after {
 	letter-spacing: 2px;
 }
 
-/* Portfolio Wrap */
-#portfoliowrap {
-	background: url(../img/portfolio-bg.jpg) no-repeat center top;
-	margin-top: 0px;
-	padding-top:70px;
-	text-align:center;
-	background-attachment: relative;
-	background-position: center center;
-	min-height: 500px;
-	width: 100%;
-	
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-
-
-#portfoliowrap h3 {
-	color: #ffffff;
-}
-
-.port-space {
-	padding-bottom: 20px;
-}
-
 
 /* White Wrap */
 
@@ -175,20 +144,13 @@ a:after {
 	text-align: center;
 }
 
-/* Dark Grey Wrap */
-#dg {
-	background: #e0e0e0;
-	padding-top: 70px;
-	padding-bottom: 70px;
-	text-align: center;
-}
 
 /* Footer Wrap */
 
 #f {
 	background: #2f2f2f;
-	padding-top: 70px;
-	padding-bottom: 70px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	text-align: center
 }
 
@@ -201,18 +163,6 @@ a:after {
 	color: white;
 	padding-left: 10px;
 	padding-right: 10px;
-}
-
-/* Copyright Wrap */
-
-#c {
-	background: #222222;
-	padding-top: 15px;
-	text-align: right;
-}
-
-#c p {
-	color: white
 }
 
 
@@ -451,19 +401,4 @@ a:after {
 	color: white;
 	background-color: #16a085;
 	
-}
-
-/* TEAM CONF */
-
-.team {
-	padding-top: 20px;
-}
-
-.team:hover {
-	background: white;
-}
-
-.team a {
-	padding-right: 10px;
-	padding-left: 10px;
 }

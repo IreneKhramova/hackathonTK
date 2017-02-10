@@ -35,13 +35,9 @@
 	<!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">Кафе Саранск</a></h1>
+			<h1 class="logo"><a href="index.php">Кафе Саранск</a></h1>
 			<i class="icon-remove menu-close"></i>
-			<a href="#home" class="smoothScroll">Home</a>
-			<a href="#services" class="smoothScroll">Services</a>
-			<a href="#portfolio" class="smoothScroll">Portfolio</a>
-			<a href="#about" class="smoothScroll">About</a>
-			<a href="#contact" class="smoothScroll">Contact</a>
+			<a href="#contact" class="smoothScroll">Контакты</a>
 			<a href="#"><i class="icon-facebook"></i></a>
 			<a href="#"><i class="icon-twitter"></i></a>
 			<a href="#"><i class="icon-dribbble"></i></a>
@@ -77,12 +73,23 @@
 					while($row= $result->fetch_assoc())
 					{
 					echo ' <img src="' . $row['image'] . '">
-					<h4>'.$row['name'].'</h4>
+					<h3>'.$row['name'].'</h3>
 					<p>'.$row['address'].'</p>
 					<p>'.$row['rating'].'</p>
 					';
 					}
 					$result->close();
+					echo '<br>
+					';
+					$comment=$mysqli->query('SELECT * FROM `comment` where id_cafe="' . $_GET['id'] . '"'); 
+					while($row= $comment->fetch_assoc())
+					{
+					echo ' <br>
+					<h4>'. $row['user_name'] .'</h4>
+					<br>
+					<p>'. $row['comment'] .'</p>' . $row['rating'];
+					}
+					$comment->close();
 				}
 				else 
 					echo '404';
@@ -106,7 +113,7 @@
 	<div id="f">
 		<div class="container">
 			<div class="row">
-					<h3><b>CONTACT US</b></h3>
+					<h3><b>Контакты</b></h3>
 					<br>
 					<div class="col-sm-4 col-md-4 col-lg-4">
 						<h3><b>Send Us A Message:</b></h3>

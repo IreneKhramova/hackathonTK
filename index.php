@@ -36,13 +36,11 @@
 	<!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.html#home">Кафе Саранск</a></h1>
+			<h1 class="logo"><a href="index.php">Кафе Саранск</a></h1>
 			<i class="icon-remove menu-close"></i>
-			<a href="#home" class="smoothScroll">Home</a>
-			<a href="#services" class="smoothScroll">Services</a>
-			<a href="#portfolio" class="smoothScroll">Portfolio</a>
-			<a href="#about" class="smoothScroll">About</a>
-			<a href="#contact" class="smoothScroll">Contact</a>
+			<a href="#home" class="smoothScroll">В начало</a>
+			<a href="#services" class="smoothScroll">Список кафе</a>
+			<a href="#contact" class="smoothScroll">Контакты</a>
 			<a href="#"><i class="icon-facebook"></i></a>
 			<a href="#"><i class="icon-twitter"></i></a>
 			<a href="#"><i class="icon-dribbble"></i></a>
@@ -111,7 +109,7 @@
 				while($row= $result->fetch_assoc())
 				{
 				echo '  <div class="col-sm-3 col-md-3 col-lg-3">
-					<img src="' . $row['image'] . '">
+					<img width="230" src="' . $row['image'] . '">
 					<h4><a href="item.php?id='. $row['id'] .'">'.$row['name'].'</a></h4>
 					<p>'.$row['address'].'</p>
 					<p>'.$row['rating'].'</p>
@@ -139,7 +137,7 @@
 	<div id="f">
 		<div class="container">
 			<div class="row">
-					<h3><b>CONTACT US</b></h3>
+					<h3><b>Контакты</b></h3>
 					<br>
 					<div class="col-sm-4 col-md-4 col-lg-4">
 						<h3><b>Send Us A Message:</b></h3>
