@@ -6,7 +6,7 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="assets/ico/favicon.png">
 
-    <title>Кафе Саранск</title>
+    <title>Рестораны и кафе города Саранск</title>
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">
@@ -36,10 +36,10 @@
 	<!-- Menu -->
 	<nav class="menu" id="theMenu">
 		<div class="menu-wrap">
-			<h1 class="logo"><a href="index.php">Кафе Саранск</a></h1>
+			<h1 class="logo"><a href="index.php#home">Рестораны и кафе</a></h1>
 			<i class="icon-remove menu-close"></i>
-			<a href="#home" class="smoothScroll">В начало</a>
-			<a href="#services" class="smoothScroll">Список кафе</a>
+			<a href="#home" class="smoothScroll">Главная</a>
+			<a href="#services" class="smoothScroll">Куда пойти ?</a>
 			<a href="#contact" class="smoothScroll">Контакты</a>
 			<a href="#"><i class="icon-facebook"></i></a>
 			<a href="#"><i class="icon-twitter"></i></a>
@@ -58,8 +58,8 @@
 	<div id="headerwrap">
 		<div class="container">
 			<br>
-			<h1>Кафе</h1>
-			<h2>Саранск</h2>
+			<h1>Рестораны и кафе</h1>
+			<h2>Где поесть в Саранске ?</h2>
 			<div class="row">
 				<br>
 				<br>
@@ -76,8 +76,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-8 col-md-offset-2 col-lg-8 col-sm-offset-2 col-md-8 col-sm-offset-2">
-				<h3>WELCOME TO <bold>ONASSIS</bold>. <bold>A FREE BOOTSTRAP 3</bold> THEME. CRAFTED WITH LOVE BY <bold>BLACKTIE.CO</bold>. <br/>
-					<bold>IDEAL FOR</bold> AGENCIES & FREELANCERS.
+				<h3>ХОТИТЕ <bold>ВКУСНО ПОЕСТЬ</bold> В ГОРОДЕ <bold>САРАНСК</bold> И НЕ ЗНАЕТЕ <bold>ГДЕ</bold>? ПРЕДЛАГАЕМ ОЗНАКОМИТЬСЯ С РЕСТОРАНАМИ И КАФЕ ГОРОДА - ОРГАНИЗАТОРА <bold>ЧМ 2018</bold>.
 				</h3>
 				</div>
 			</div>
@@ -99,7 +98,7 @@
 	<div id="g">
 		<div class="container">
 			<div class="row">
-				<h3>Кафе</h3>
+				<h3>КУДА ПОЙТИ</h3>
 				<br>
 				<br>
 
@@ -109,10 +108,10 @@
 				while($row= $result->fetch_assoc())
 				{
 				echo '  <div class="col-sm-3 col-md-3 col-lg-3">
-					<img width="230" src="' . $row['image'] . '">
+					<img src="assets/img/sa/' . $row['image'] . '">
 					<h4><a href="item.php?id='. $row['id'] .'">'.$row['name'].'</a></h4>
 					<p>'.$row['address'].'</p>
-					<p>'.$row['rating'].'</p>
+					<p>'.$row['rating'].'<img src="assets/img/s1.png">'.'</p>
 					</div>';
 				}
 				$result->close();
@@ -137,26 +136,26 @@
 	<div id="f">
 		<div class="container">
 			<div class="row">
-					<h3><b>Контакты</b></h3>
+					<h3><b>СВЯЖИТЕСЬ С НАМИ</b></h3>
 					<br>
 					<div class="col-sm-4 col-md-4 col-lg-4">
-						<h3><b>Send Us A Message:</b></h3>
-						<h3>onassis@blacktie.co</h3>
+						<h3><b>Отправить нам сообщение:</b></h3>
+						<h3>test@mail.com</h3>
 						<br>
 					</div>
 					
 					<div class="col-sm-4 col-md-4 col-lg-4">	
-						<h3><b>Call Us:</b></h3>
+						<h3><b>Звоните нам:</b></h3>
 						<h3>+55 3984-4389</h3>
 						<br>
 					</div>
 					
 					<div class="col-sm-4 col-md-4 col-lg-4">
-						<h3><b>We Are Social</b></h3>
+						<h3><b>Мы в социальных сетях</b></h3>
 						<p>
-							<a href="index.html#"><i class="icon-facebook"></i></a>
-							<a href="index.html#"><i class="icon-twitter"></i></a>
-							<a href="index.html#"><i class="icon-envelope"></i></a>
+							<a href="#"><i class="icon-facebook"></i></a>
+							<a href="#"><i class="icon-twitter"></i></a>
+							<a href="#"><i class="icon-envelope"></i></a>
 						</p>
 						<br>
 					</div>
